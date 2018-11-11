@@ -54,7 +54,7 @@ using StoreFront.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20680f03641047108bc331023047f104", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d906c5a216b4ae48021808f35066b56", async() => {
                 BeginContext(31, 93, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>SportsStore</title>\r\n");
                 EndContext();
@@ -74,7 +74,7 @@ using StoreFront.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(133, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec347f300a6847f980615eeded3bf404", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65864f3c47bc4580b879b0aa7b57c9ff", async() => {
                 BeginContext(139, 21, true);
                 WriteLiteral("\r\n    <div>\r\n        ");
                 EndContext();

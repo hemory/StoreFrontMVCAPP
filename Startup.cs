@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoreFront.Models;
@@ -25,6 +26,9 @@ namespace StoreFront
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
             {
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration["Data:StoreFront:ConnectionString"]));
+
+            services.AddTransient<IProductRepository, EFProductRepository>();
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -32,7 +36,7 @@ namespace StoreFront
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<IProductRepository, FakeProductRepository>();
+            services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             }
 
@@ -59,6 +63,7 @@ namespace StoreFront
                     name: "default",
                     template: "{controller=Product}/{action=List}/{id?}");
             });
+            SeedData.EnsurePopulated(app);
             }
         }
     }
